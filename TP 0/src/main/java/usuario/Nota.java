@@ -18,13 +18,14 @@ public class Nota {
 									 No se si definiendolo como un string vamos a solucionar algo, pero habria
 									 que pensar esto mas adelante. Yo diria dejarlo pa lo ultimo, ya que en todo
 									 campo menos. Primero veamos de como bindear las cosas*/
-	RequestService cliente = new RequestService();
+//	RequestService cliente = new RequestService();
 	
-	public String token;
+	//public String token;
 	
+	/*
 	public JSONObject datosNota(){
 		return cliente.notas(token);
-	}
+	}'
 	
 	public String getToken() {
 		return token;
@@ -58,7 +59,7 @@ public class Nota {
 	}
 	
 	/* Aca esta el Par(Getter y Setter) del atributo calificaciones */
-	public String getCalificaciones(){
+	/*public String getCalificaciones(){
 		return calificaciones;
 	}
 	
@@ -66,6 +67,8 @@ public class Nota {
 		this.calificaciones = this.datosNota().optJSONArray("grades").toString();
 	}
 }
+*/
+  
 	/*
 public static void main(String[] args) throws Exception{
 		
@@ -116,3 +119,5 @@ public static void main(String[] args) throws Exception{
 	  ]
 	}
 */
+	
+}

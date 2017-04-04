@@ -17,9 +17,7 @@ public class TokenViewModel {
 
 	public void setToken(String token) {
 		this.token = token;
-		Repositorios.alumnos.getAlumno().setToken(token);
-		//System.out.println(token);
-		
+		//DatosViewModel.setToken(token);
 	}
 
 	

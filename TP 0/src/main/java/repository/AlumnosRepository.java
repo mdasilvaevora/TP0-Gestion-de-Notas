@@ -3,20 +3,20 @@ package repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.uqbar.commons.utils.Observable;
+
 import usuario.Alumno;
 
+@Observable
 public class AlumnosRepository {
 
-	private static Alumno alumno ;
+	private  Alumno alumno ;
 	private String token;
-
-	public static Alumno getAlumno() {
-    
-		if (alumno==null) {
-
+	
+	public Alumno getAlumno() {
+		if(alumno==null){
 			alumno=new Alumno();
 		}
-
 		return alumno;
 	}
 	
@@ -27,7 +27,4 @@ public class AlumnosRepository {
 	public String getToken(){
 		return this.token;
 	}
-
-	
-
 }
