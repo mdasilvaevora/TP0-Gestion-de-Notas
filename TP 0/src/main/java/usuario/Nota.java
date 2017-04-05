@@ -6,12 +6,13 @@ import org.uqbar.arena.widgets.List;
 import org.uqbar.commons.utils.Observable;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 
 @SuppressWarnings("unused")
 @Observable
 public class Nota{
 
-	public int id;
+	public String id;
 	public String titulo;
 	public String descripcion;
 	public String calificaciones; /* Apa las papas aca. Momentaneamente es una decision sin seguridad. Hay que ver
@@ -27,7 +28,7 @@ public class Nota{
   RequestService cliente = new RequestService();
   Gson gson = new Gson();	
 	
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 	public String getTitulo() {
@@ -38,6 +39,20 @@ public class Nota{
 	}
 	public String getCalificaciones() {
 		return calificaciones;
+	}
+	
+	
+	public void setId(String id) {
+		this.id = id;
+	}
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	public void setCalificaciones(String calificaciones) {
+		this.calificaciones = calificaciones;
 	}
 	
 }	

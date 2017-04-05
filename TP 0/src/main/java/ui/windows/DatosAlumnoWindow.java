@@ -54,10 +54,18 @@ public class DatosAlumnoWindow extends Dialog<DatosViewModel> {
 		new Label(formPanel) //
 		.setBackground(Color.ORANGE)
 		.bindValueToProperty("gitUser");
-
+	}
+		
+		protected void addActions(Panel actionsPanel) {
+			new Button(actionsPanel)
+			.setCaption("Ver Notas")
+			.onClick(this::PlanillaNotasWindow);
 		
 	}
-	
-	
+		public void PlanillaNotasWindow() {
+			Dialog<?> dialog = new PlanillaNotasWindow(this);
+			dialog.open();
+			dialog.onAccept(() -> {});
+		}
 	
 }

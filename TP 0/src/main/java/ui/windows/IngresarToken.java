@@ -35,7 +35,7 @@ public class IngresarToken extends SimpleWindow<TokenViewModel>{
 		new Button(actionsPanel)
 		.setCaption("Ver datos")
 		.onClick(this::DatosAlumnoWindow);
-		/* aca está ok
+		/*aca está ok
 		new Button(actionsPanel)
 		.setCaption("Ver Notas")
 		.onClick(this::PlanillaNotasWindow);

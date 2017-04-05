@@ -51,6 +51,8 @@ public class Alumno {
 	public String setGit_user(String git_hubuser) {
 		 return this.github_user = git_hubuser;
 	}
+	
+	
 }
 
 

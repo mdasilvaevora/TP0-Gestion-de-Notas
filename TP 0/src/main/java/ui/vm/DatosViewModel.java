@@ -60,7 +60,8 @@ public class DatosViewModel{
 	public void setearAlumnoSeleccionado(){
 		RequestService c = new RequestService();
 		Alumno json= new Gson().fromJson(c.datos(token).getEntity(String.class) ,Alumno.class);
-		System.out.println(json.getFirst_name());
+		//System.out.println(json.getFirst_name());
 		this.unAlumno=json;
 	}
+
 }
