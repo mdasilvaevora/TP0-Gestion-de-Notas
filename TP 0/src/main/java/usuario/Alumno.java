@@ -4,8 +4,6 @@ import org.uqbar.commons.utils.Observable;
 
 import com.google.gson.Gson;
 
-import repository.Repositorios;
-
 @Observable
 public class Alumno {
 	public String code;
