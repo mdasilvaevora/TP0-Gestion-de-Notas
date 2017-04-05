@@ -2,6 +2,7 @@ package ui.vm;
 
 import org.uqbar.commons.utils.Observable;
 
+import repository.AlumnosRepository;
 import repository.Repositorios;
 
 
@@ -18,6 +19,7 @@ public class TokenViewModel {
 	public void setToken(String token) {
 		this.token = token;
 		//DatosViewModel.setToken(token);
+		AlumnosRepository.getAlumno().setToken(token);
 	}
 
 	

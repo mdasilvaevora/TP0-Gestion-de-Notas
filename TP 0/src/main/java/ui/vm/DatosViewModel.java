@@ -3,6 +3,8 @@ package ui.vm;
 import org.uqbar.commons.utils.Observable;
 import com.sun.jersey.api.client.Client;
 
+import repository.AlumnosRepository;
+
 import com.google.gson.Gson;
 
 import usuario.Alumno;
@@ -11,7 +13,8 @@ import usuario.RequestService;
 @Observable
 public class DatosViewModel{
 
-	private static String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
+	//private static String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiIxMTEyMjIzMzMiLCJybmQiOiJ5SXNmZFIwN2lIR3BRRmVjYU9KT2VRPT0ifQ.9pVJGUXhrJPQ-TptNCt971l0h_1dWqWgMrHAWXJchho";
+	private static String token = AlumnosRepository.getAlumno().getToken();
 	private Alumno unAlumno;
 	private String code;
 	private String firstName;

@@ -10,10 +10,10 @@ import usuario.Alumno;
 @Observable
 public class AlumnosRepository {
 
-	private  Alumno alumno ;
+	private static  Alumno alumno ;
 	private String token;
 	
-	public Alumno getAlumno() {
+	public static Alumno getAlumno() {
 		if(alumno==null){
 			alumno=new Alumno();
 		}
