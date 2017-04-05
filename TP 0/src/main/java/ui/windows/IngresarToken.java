@@ -8,8 +8,9 @@ import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
-import repository.Repositorios;
+import ui.vm.PlanillaNotasViewModel;
 import ui.vm.TokenViewModel;
+import ui.vm.DatosViewModel;
 
 @SuppressWarnings("serial")
 public class IngresarToken extends SimpleWindow<TokenViewModel>{
@@ -29,12 +30,16 @@ public class IngresarToken extends SimpleWindow<TokenViewModel>{
 		
 		
 	}
-	@Override
-	protected void addActions(Panel actions) {
-		new Button(actions)
+	
+	protected void addActions(Panel actionsPanel) {
+		new Button(actionsPanel)
 		.setCaption("Ver datos")
 		.onClick(this::DatosAlumnoWindow);
-		
+		/* aca está ok
+		new Button(actionsPanel)
+		.setCaption("Ver Notas")
+		.onClick(this::PlanillaNotasWindow);
+		*/
 	}
 	
 	public void DatosAlumnoWindow() {
@@ -43,5 +48,12 @@ public class IngresarToken extends SimpleWindow<TokenViewModel>{
 		dialog.onAccept(() -> {});
 }
 	
+/* tira error en el dialog
+	public void PlanillaNotasWindow() {
+		Dialog<?> dialog = new PlanillaNotasWindow(this); 
+		dialog.open();
+		dialog.onAccept(() -> {});
+}
+*/
 			
 }

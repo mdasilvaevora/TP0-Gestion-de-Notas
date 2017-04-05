@@ -6,7 +6,6 @@ import ui.windows.IngresarToken;
 public class Main extends Application{
 
 	public static void main(String[] args) {
-		//Fixture.initialize();
 		new Main().start();
 	}
 	

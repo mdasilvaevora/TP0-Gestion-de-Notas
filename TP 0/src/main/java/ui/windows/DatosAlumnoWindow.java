@@ -20,7 +20,7 @@ import usuario.Alumno;
 import ui.vm.DatosViewModel;
 
 
-@SuppressWarnings("serial")
+@SuppressWarnings({ "serial", "unused" })
 public class DatosAlumnoWindow extends Dialog<DatosViewModel> {
 
 
@@ -54,26 +54,10 @@ public class DatosAlumnoWindow extends Dialog<DatosViewModel> {
 		new Label(formPanel) //
 		.setBackground(Color.ORANGE)
 		.bindValueToProperty("gitUser");
-		
 
-
-		//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 		
 	}
 	
-	// Aca la navegacion hacia la otra ventana de notas esta bien seteada. Solo falta el view model de la Planilla, por eso tira error si se descomenta.
-	/*
-	@Override
-	protected void addActions(Panel actions){
-		new Button(actions).setCaption("Ver Notas").onClick(this::PlanillaNotasWindow);
-		
-	}
-
-	public void PlanillaNotasWindow() {
-		Dialog<?> dialog = new PlanillaNotasWindow(this);
-		dialog.open();
-		dialog.onAccept(() -> {});
-	}
-	*/
+	
 	
 }

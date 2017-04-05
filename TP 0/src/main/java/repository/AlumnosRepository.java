@@ -7,6 +7,7 @@ import org.uqbar.commons.utils.Observable;
 
 import usuario.Alumno;
 
+@SuppressWarnings("unused")
 @Observable
 public class AlumnosRepository {
 
