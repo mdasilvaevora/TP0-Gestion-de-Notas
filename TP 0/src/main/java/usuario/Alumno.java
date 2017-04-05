@@ -10,7 +10,7 @@ public class Alumno {
 	public String first_name;
 	public String last_name;
 	public String token;
-	public String git_user;
+	public String github_user;
 	RequestService cliente = new RequestService();
 	Gson gson = new Gson();	
 	
@@ -42,7 +42,7 @@ public class Alumno {
 		return last_name;
 	}
 	public String getGit_user() {
-		return git_user;
+		return github_user;
 	}
 
 	public void setToken(String token) {
@@ -61,8 +61,8 @@ public class Alumno {
 		 return this.last_name = last_name;
 	}
 
-	public String setGit_user(String git_user) {
-		 return this.git_user = git_user;
+	public String setGit_user(String git_hubuser) {
+		 return this.github_user = git_hubuser;
 	}
 }
 
