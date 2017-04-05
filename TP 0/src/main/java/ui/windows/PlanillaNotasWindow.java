@@ -19,59 +19,8 @@ import org.uqbar.arena.widgets.tables.Table;
 import org.uqbar.arena.windows.WindowOwner;
 import ui.vm.DatosViewModel;
 import ui.vm.PlanillaNotasViewModel;
+import usuario.Asignatura;
 import usuario.Nota;
-
-
-
-/*Queda comentado porque me parece mas facil aunque parezca mas dificil mostrarlo en una tabla
- * ya que un alumno puede tener N notas.
-
-//tira error en el dialog con PlanillaNotasViewModel
-public class PlanillaNotasWindow extends Dialog<PlanillaNotasViewModel> {
-
-
-	public PlanillaNotasWindow(WindowOwner parent) {
-		super(parent, new PlanillaNotasViewModel());
-	}
-	
-	protected void createFormPanel(Panel formPanel) {
-		this.setTitle("Asignaciones y Notas Nota");
-		
-		
-		formPanel.setLayout(new VerticalLayout());
-		formPanel.setWidth(500);
-
-		
-		new Label(formPanel).setText("ID: ");
-		new Label(formPanel) //
-		.setBackground(Color.ORANGE)
-		.bindValueToProperty("titulo");
-		
-		
-		new Label(formPanel).setText("Nombre: ");
-		new Label(formPanel) //
-		.setBackground(Color.ORANGE)
-		.bindValueToProperty("titulo");
-		
-		new Label(formPanel).setText("Descripcion: ");
-		new Label(formPanel) //
-		.setBackground(Color.ORANGE)
-		.bindValueToProperty("descripcion");
-		
-		new Label(formPanel).setText("Calificaciones: ");
-		new Label(formPanel) //
-		.setBackground(Color.ORANGE)
-		.bindValueToProperty("calificaciones");
-
-		
-	}
-	
-}
-
-/*
- {"assignments":[{"id":1,"title":"TPA1","description":"Entrega 1 del TP Anual","grades":[]},
- {"id":2,"title":"TPA2","description":"Entrega 2 del TP Anual","grades":[]}]}
- */
 
 public class PlanillaNotasWindow extends Dialog<PlanillaNotasViewModel> {
 	
@@ -82,13 +31,13 @@ public class PlanillaNotasWindow extends Dialog<PlanillaNotasViewModel> {
 	protected void createFormPanel(Panel formPanel) {
 		this.setTitle("Notas");
 			
-		Table<Nota> table = new Table<Nota>(formPanel, Nota.class);
+		Table<Asignatura> table = new Table<Asignatura>(formPanel, Asignatura.class);
 		table.setHeight(200);
 		table.setWidth(450);
-		/*table.bindItemsToProperty("notas");
-		table.bindValueToProperty("NotaSeleccionado"); Con estos se deberia bindear a la lista notas, no se como hacerlo(nachoCasarino)*/
+		table.bindItemsToProperty("asignaturas").setAdapter(new PropertyAdapter(Asignatura.class, "id"));
+		table.bindValueToProperty("asignaturaSeleccionada");//setAdapter(new PropertyAdapter(Nota.class, "id"));
 		
-		new Column<Nota>(table)
+		/*new Column<Nota>(table)
 	    .setTitle("ID")
 	    .setFixedSize(150)
 	    .bindContentsToProperty("id");
@@ -107,6 +56,7 @@ public class PlanillaNotasWindow extends Dialog<PlanillaNotasViewModel> {
 	    .setTitle("Calificaciones")
 	    .setFixedSize(150)
 	    .bindContentsToProperty("calificaciones");
+	    */
 	}
 
 	@Override
