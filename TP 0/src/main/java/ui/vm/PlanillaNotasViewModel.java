@@ -25,7 +25,6 @@ import usuario.RequestService;
 @Observable
 public class PlanillaNotasViewModel {
 	
-	//public static List<Calificacion>  = new ArrayList<Nota>();
 	
 	private static String token = AlumnosRepository.getAlumno().getToken();
 	private ConjuntoAsignaturas conjuntoAsignaturas = new ConjuntoAsignaturas();
@@ -47,7 +46,7 @@ public class PlanillaNotasViewModel {
 	}
 	
 	public void setAsignaturaSeleccionada(Asignatura asignatura){
-		this.asignatura=asignatura;
+		this.asignatura= asignatura;
 	}
 	
 	
@@ -59,59 +58,29 @@ public class PlanillaNotasViewModel {
 		return this.asignaturas;
 	}
 	
-	/*public Object getId(){
-		return evaluacion.getId();
-	}
-	
-	public String getTitulo() {
-		return unaNota.getTitulo();
-	}
-	
-	public String getDescripcion() {
-		return unaNota.getDescripcion();
-	}
-	
-	public String getCalificaciones() {
-		return unaNota.getCalificaciones();
+	/*public boolean verificarAprobacion(int valor){
 		
-	}
-	public List<Nota> getNotas(){
-		return notas;
-	}
-	*/
-
-
+		if(valor >= 6) return true;
+		else return false;
+		
+	}*/
+	
 	public void setearNotaSeleccionada() {
 		
 		RequestService c = new RequestService();
 		ConjuntoAsignaturas json= new Gson().fromJson(c.notas(token).getEntity(String.class) ,ConjuntoAsignaturas.class);
 		this.conjuntoAsignaturas = json;
-		this.asignaturas=this.conjuntoAsignaturas.getAssignments();
+		this.asignaturas = this.conjuntoAsignaturas.getAssignments();
 		
-		
-		/*System.out.println(this.asignaturas.get(0).getTitle());
-		System.out.println(this.asignaturas.get(1).getTitle());
-		*/
-		
-		/*for (int i = 0; i <= json.size(); i++) {para cada variable primero trae la lista entera lo casteo a JsonArray, 
-												con la i del for traigo el primer JsonObject, despues casteo de nuevo a JsonObject,
-												le pido que me pase la variable que quiera, y despues la convierto con toString a un String
-												para asignarla a la variable de nota, despues notas.add, agrega la nota a la lista notas
-			unaNota.setId((((JsonObject) ((JsonArray) json.get("assignments")).get(i)).get("id")).toString());																			
-			unaNota.setTitulo((((JsonObject) ((JsonArray) json.get("assignments")).get(i)).get("title")).toString());
-			unaNota.setDescripcion((((JsonObject) ((JsonArray) json.get("assignments")).get(i)).get("description")).toString());
-			unaNota.setCalificaciones((((JsonObject) ((JsonArray) json.get("assignments")).get(i)).get("grades")).toString());
-			*/ 
+		/*for (int i = 0; i < asignaturas.size(); i++) {
 			
-			/*Esto trae el ID de las dos notas, si cambias "id" por las otras variables
-			te las trae :::: json :: JsonObject -> JsonArray -> JsonObject -> JsonElement -> String;*/
+			
+			this.asignaturas.get(i).getGrades().forEach(item -> this.verificarAprobacion(item.getValue()));
+			
+		}
+		*/
 		}
 		
 	}
-	
-	
-	/*public static void main(String[] args){
-		PlanillaNotasViewModel nota = new PlanillaNotasViewModel();
-		nota.setearNotaSeleccionada();
-	}*/
+
 

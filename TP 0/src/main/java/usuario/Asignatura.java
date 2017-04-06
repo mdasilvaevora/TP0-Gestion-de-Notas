@@ -44,7 +44,14 @@ public class Asignatura{
 		this.description = description;
 	}
 	public void setGrades(List<Nota> notas) {
+		
 		this.grades = notas;
+	}
+	
+	public void listaNotasGrades(){
+		System.out.println(this.grades.isEmpty());
+		
+		
 	}
 	
 }	

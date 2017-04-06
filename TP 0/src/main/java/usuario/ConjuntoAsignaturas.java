@@ -2,11 +2,14 @@ package usuario;
 
 import java.util.LinkedList;
 import java.util.List;
-
 import org.uqbar.commons.utils.Observable;
 
+
+
+@SuppressWarnings({ "unchecked", "rawtypes" })
 @Observable
 public class ConjuntoAsignaturas {
+	
 	
 	private List<Asignatura> assignments = new LinkedList();	
 	

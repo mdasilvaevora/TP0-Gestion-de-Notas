@@ -8,9 +8,9 @@ import org.uqbar.arena.windows.Dialog;
 import org.uqbar.arena.windows.SimpleWindow;
 import org.uqbar.arena.windows.WindowOwner;
 
-import ui.vm.PlanillaNotasViewModel;
+
 import ui.vm.TokenViewModel;
-import ui.vm.DatosViewModel;
+
 
 @SuppressWarnings("serial")
 public class IngresarToken extends SimpleWindow<TokenViewModel>{
@@ -35,11 +35,7 @@ public class IngresarToken extends SimpleWindow<TokenViewModel>{
 		new Button(actionsPanel)
 		.setCaption("Ingresar")
 		.onClick(this::DatosAlumnoWindow);
-		/*aca est� ok
-		new Button(actionsPanel)
-		.setCaption("Ver Notas")
-		.onClick(this::PlanillaNotasWindow);
-		*/
+	
 	}
 	
 	public void DatosAlumnoWindow() {
