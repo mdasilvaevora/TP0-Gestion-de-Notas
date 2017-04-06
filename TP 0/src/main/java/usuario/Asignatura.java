@@ -11,7 +11,7 @@ import com.google.gson.JsonElement;
 @Observable
 public class Asignatura{
 
-	public String id;
+	public int id;
 	public String title;
 	public String description;
 	private List<Nota> grades = new LinkedList<>(); 
@@ -20,7 +20,7 @@ public class Asignatura{
   RequestService cliente = new RequestService();
   Gson gson = new Gson();	
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 	public String getTitle() {
@@ -34,7 +34,7 @@ public class Asignatura{
 	}
 	
 	
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public void setTitle(String title) {

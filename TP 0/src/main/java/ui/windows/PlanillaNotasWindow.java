@@ -34,29 +34,29 @@ public class PlanillaNotasWindow extends Dialog<PlanillaNotasViewModel> {
 		Table<Asignatura> table = new Table<Asignatura>(formPanel, Asignatura.class);
 		table.setHeight(200);
 		table.setWidth(450);
-		table.bindItemsToProperty("asignaturas").setAdapter(new PropertyAdapter(Asignatura.class, "id"));
-		table.bindValueToProperty("asignaturaSeleccionada");//setAdapter(new PropertyAdapter(Nota.class, "id"));
+		table.bindItemsToProperty("asignaturas");//setAdapter(new PropertyAdapter(Asignatura.class, "id"));
+		table.bindValueToProperty("asignaturaSeleccionada.id");//setAdapter(new PropertyAdapter(Nota.class, "id"));
 		
-		/*new Column<Nota>(table)
-	    .setTitle("ID")
+		new Column<Asignatura>(table)
+	    .setTitle("Title")
 	    .setFixedSize(150)
 	    .bindContentsToProperty("id");
 		
-		new Column<Nota>(table)
+		new Column<Asignatura>(table)
 	    .setTitle("Titulo")
 	    .setFixedSize(150)
-	    .bindContentsToProperty("titulo");
+	    .bindContentsToProperty("title");
 		
-		new Column<Nota>(table)
+		new Column<Asignatura>(table)
 	    .setTitle("Descripcion")
 	    .setFixedSize(150)
-	    .bindContentsToProperty("descripcion");
+	    .bindContentsToProperty("description");
 		
-		new Column<Nota>(table)
+		new Column<Asignatura>(table)
 	    .setTitle("Calificaciones")
 	    .setFixedSize(150)
-	    .bindContentsToProperty("calificaciones");
-	    */
+	    .bindContentsToProperty("grades");
+	    
 	}
 
 	@Override

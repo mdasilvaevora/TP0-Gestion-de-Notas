@@ -17,6 +17,7 @@ import com.google.gson.JsonObject;
 
 import repository.AlumnosRepository;
 import usuario.ConjuntoAsignaturas;
+import usuario.Nota;
 import usuario.Asignatura;
 import usuario.RequestService;
 
@@ -34,6 +35,7 @@ public class PlanillaNotasViewModel {
 	private String descripcion;
 	private String calificaciones;
 	private List<Asignatura> asignaturas;
+	private List<Nota> notas;
 	private Asignatura notaSeleccionada;
 	
 	public Asignatura getNotaSeleccionada(){
@@ -85,6 +87,11 @@ public class PlanillaNotasViewModel {
 		ConjuntoAsignaturas json= new Gson().fromJson(c.notas(token).getEntity(String.class) ,ConjuntoAsignaturas.class);
 		this.conjuntoAsignaturas = json;
 		this.asignaturas=this.conjuntoAsignaturas.getAssignments();
+		
+		
+		/*System.out.println(this.asignaturas.get(0).getTitle());
+		System.out.println(this.asignaturas.get(1).getTitle());
+		*/
 		
 		/*for (int i = 0; i <= json.size(); i++) {para cada variable primero trae la lista entera lo casteo a JsonArray, 
 												con la i del for traigo el primer JsonObject, despues casteo de nuevo a JsonObject,
